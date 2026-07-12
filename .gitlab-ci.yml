@@ -1,0 +1,16 @@
+# .gitlab-ci.yml for a static website
+
+stages:
+  - deploy
+
+pages:
+  stage: deploy
+  script:
+    - echo "Deploying static site..."
+    - mkdir .public
+    - cp -r * .public
+  artifacts:
+    paths:
+      - .public
+  only:
+    - main   # Deploy only when pushing to main branch
