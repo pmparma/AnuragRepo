@@ -3,1054 +3,691 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PROPERTAGE — Luxury Property Management, Bengaluru</title>
+<title>PROPERTAGE™ — Luxury Property Management, Bengaluru</title>
 <meta name="description" content="Premium property management in Bengaluru for NRI and local property owners. Tenant management, inspections, rent coordination, Khata transfer and property tax support.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink: #12241D;
-    --ink-2: #192B21;
-    --ink-3: #1F3327;
-    --ivory: #F4F0E6;
-    --ivory-dim: rgba(244,240,230,0.66);
-    --ivory-faint: rgba(244,240,230,0.38);
-    --brass: #C7963C;
-    --brass-light: #E4C77E;
-    --oxide: #A24A32;
-    --charcoal: #211E1A;
-    --charcoal-dim: rgba(33,30,26,0.64);
-    --sage: #7C9172;
-    --line-on-ink: rgba(199,150,60,0.28);
-    --line-on-ivory: rgba(33,30,26,0.14);
-    --shadow: 0 20px 60px rgba(10,20,15,0.35);
-    --container: 1180px;
+    --ink: #12241D; --ink-2: #192B21; --ink-3: #1F3327;
+    --ivory: #F4F0E6; --ivory-2: #ECE6D6;
+    --brass: #C7963C; --brass-light: #E4C77E; --oxide: #A24A32;
+    --charcoal: #211E1A; --sage: #7C9172;
+    --line-on-ink: rgba(199,150,60,0.28); --line-on-ivory: rgba(33,30,26,0.14);
+    --shadow: 0 20px 60px rgba(10,20,15,0.35); --container: 1180px;
   }
-
   *,*::before,*::after{ box-sizing: border-box; }
   html{ scroll-behavior: smooth; }
-  body{
-    margin:0;
-    background: var(--ivory);
-    color: var(--charcoal);
-    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
+  body{ margin:0; background: var(--ivory); color: var(--charcoal); font-family: 'Archivo','Helvetica Neue',Arial,sans-serif; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; }
   img,svg{ display:block; max-width:100%; }
-  a{ color: inherit; text-decoration: none; }
+  a{ color:inherit; text-decoration:none; }
+  h1,h2,h3{ font-family:'Fraunces',Georgia,serif; font-weight:500; line-height:1.08; margin:0; letter-spacing:-0.01em; }
+  .container{ max-width:var(--container); margin:0 auto; padding:0 clamp(1.25rem,4vw,3rem); }
+  .eyebrow{ font-family:'IBM Plex Mono','Courier New',monospace; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--brass); display:inline-flex; align-items:center; gap:0.6rem; }
+  .eyebrow::before{ content:""; width:22px; height:1px; background:var(--brass); display:inline-block; }
+  .btn{ font-family:'Archivo',sans-serif; font-size:0.92rem; font-weight:600; letter-spacing:0.01em; padding:0.85rem 1.6rem; border-radius:2px; display:inline-flex; align-items:center; gap:0.55rem; border:1px solid transparent; cursor:pointer; transition:transform .25s ease,background .25s ease,border-color .25s ease,color .25s ease; white-space:nowrap; }
+  .btn-primary{ background:var(--brass); color:var(--ink); }
+  .btn-primary:hover{ background:var(--brass-light); transform:translateY(-2px); }
+  .btn-ghost{ background:transparent; color:var(--ivory); border-color:rgba(244,240,230,0.32); }
+  .btn-ghost:hover{ border-color:var(--brass); color:var(--brass-light); transform:translateY(-2px); }
+  .btn-ghost-dark{ background:transparent; color:var(--charcoal); border-color:rgba(33,30,26,0.28); }
+  .btn-ghost-dark:hover{ border-color:var(--oxide); color:var(--oxide); transform:translateY(-2px); }
 
-  h1,h2,h3{
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 500;
-    line-height: 1.08;
-    margin: 0;
-    letter-spacing: -0.01em;
-  }
-
-  .container{
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 0 clamp(1.25rem, 4vw, 3rem);
-  }
-
-  .eyebrow{
-    font-family: 'IBM Plex Mono', 'Courier New', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--brass);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-  .eyebrow::before{
-    content:"";
-    width: 22px;
-    height: 1px;
-    background: var(--brass);
-    display: inline-block;
-  }
-
-  .btn{
-    font-family: 'Archivo', sans-serif;
-    font-size: 0.92rem;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    padding: 0.85rem 1.6rem;
-    border-radius: 2px;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    border: 1px solid transparent;
-    cursor: pointer;
-    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
-    white-space: nowrap;
-  }
-  .btn-primary{
-    background: var(--brass);
-    color: var(--ink);
-  }
-  .btn-primary:hover{ background: var(--brass-light); transform: translateY(-2px); }
-  .btn-ghost{
-    background: transparent;
-    color: var(--ivory);
-    border-color: rgba(244,240,230,0.32);
-  }
-  .btn-ghost:hover{ border-color: var(--brass); color: var(--brass-light); transform: translateY(-2px); }
-  .btn-ghost-dark{
-    background: transparent;
-    color: var(--charcoal);
-    border-color: rgba(33,30,26,0.28);
-  }
-  .btn-ghost-dark:hover{ border-color: var(--oxide); color: var(--oxide); transform: translateY(-2px); }
-
-  /* ---------- NAV ---------- */
-  .site-nav{
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: rgba(18,36,29,0.86);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line-on-ink);
-  }
-  .site-nav .container{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding-top: 1.05rem;
-    padding-bottom: 1.05rem;
-    gap: 1.5rem;
-  }
-  .brandmark{ display:flex; flex-direction:column; line-height:1.1; }
-  .brandmark .word{
-    font-family:'Fraunces', serif;
-    font-size: 1.35rem;
-    letter-spacing: 0.04em;
-    color: var(--ivory);
-  }
-  .brandmark .sub{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ivory-dim);
-    margin-top: 0.15rem;
-  }
-  .nav-links{
-    display:flex;
-    align-items:center;
-    gap: 2rem;
-    font-size: 0.88rem;
-    color: var(--ivory-dim);
-  }
-  .nav-links a:hover{ color: var(--brass-light); }
-  .nav-actions{ display:flex; align-items:center; gap: 0.7rem; }
-
-  @media (max-width: 860px){
+  .site-nav{ position:sticky; top:0; z-index:50; background:rgba(18,36,29,0.92); backdrop-filter:blur(10px); border-bottom:1px solid var(--line-on-ink); }
+  .site-nav .container{ display:flex; align-items:center; justify-content:space-between; padding-top:1.05rem; padding-bottom:1.05rem; gap:1.5rem; }
+  .brandmark{ display:flex; flex-direction:column; line-height:1.1; cursor:pointer; }
+  .brandmark .word{ font-family:'Fraunces',serif; font-size:1.35rem; letter-spacing:0.04em; color:var(--ivory); }
+  .brandmark .sub{ font-family:'IBM Plex Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ivory); opacity:0.68; margin-top:0.15rem; }
+  .nav-links{ display:flex; align-items:center; gap:1.7rem; font-size:0.86rem; color:rgba(244,240,230,0.78); }
+  .nav-links a{ padding-bottom:4px; border-bottom:1px solid transparent; cursor:pointer; }
+  .nav-links a:hover{ color:var(--brass-light); }
+  .nav-links a.active{ color:var(--brass-light); border-bottom-color:var(--brass); }
+  .nav-actions{ display:flex; align-items:center; gap:0.7rem; }
+  .nav-burger{ display:none; width:42px; height:42px; border:1px solid var(--line-on-ink); background:transparent; border-radius:2px; cursor:pointer; align-items:center; justify-content:center; flex-shrink:0; }
+  .nav-burger span{ display:block; width:18px; height:2px; background:var(--ivory); position:relative; }
+  .nav-burger span::before,.nav-burger span::after{ content:""; position:absolute; left:0; width:18px; height:2px; background:var(--ivory); transition:transform .2s ease; }
+  .nav-burger span::before{ top:-6px; } .nav-burger span::after{ top:6px; }
+  .nav-burger.open span{ background:transparent; }
+  .nav-burger.open span::before{ transform:translateY(6px) rotate(45deg); }
+  .nav-burger.open span::after{ transform:translateY(-6px) rotate(-45deg); }
+  .mobile-menu{ display:none; flex-direction:column; background:var(--ink-2); border-top:1px solid var(--line-on-ink); padding:0.5rem 0 1.2rem; }
+  .mobile-menu.open{ display:flex; }
+  .mobile-menu a{ padding:0.9rem clamp(1.25rem,4vw,3rem); font-size:0.98rem; color:rgba(244,240,230,0.85); border-bottom:1px solid var(--line-on-ink); cursor:pointer; }
+  .mobile-menu a.active{ color:var(--brass-light); }
+  .mobile-menu .mobile-ctas{ display:flex; gap:0.7rem; padding:1rem clamp(1.25rem,4vw,3rem) 0.3rem; flex-wrap:wrap; }
+  @media (max-width:980px){
     .nav-links{ display:none; }
+    .nav-actions .btn-ghost, .nav-actions .btn-primary{ display:none; }
+    .nav-burger{ display:flex; }
   }
+  @media (min-width:981px){ .mobile-menu{ display:none !important; } }
 
-  /* ---------- HERO ---------- */
-  .hero{
-    background:
-      radial-gradient(ellipse 900px 500px at 85% -10%, rgba(199,150,60,0.16), transparent 60%),
-      radial-gradient(ellipse 700px 500px at 0% 100%, rgba(124,145,114,0.10), transparent 60%),
-      var(--ink);
-    color: var(--ivory);
-    padding: clamp(3.5rem,8vw,6.5rem) 0 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-inner{
-    display:grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 3rem;
-    align-items: center;
-    padding-bottom: clamp(2.5rem,5vw,4rem);
-  }
-  .hero h1{
-    font-size: clamp(2.15rem, 4vw, 3.4rem);
-    margin-top: 1.1rem;
-    max-width: 15ch;
-  }
-  .hero h1 em{
-    font-style: italic;
-    color: var(--brass-light);
-  }
-  .hero p.lede{
-    margin-top: 1.4rem;
-    max-width: 46ch;
-    color: var(--ivory-dim);
-    font-size: 1.04rem;
-  }
-  .hero-ctas{
-    margin-top: 2.1rem;
-    display:flex;
-    flex-wrap: wrap;
-    gap: 0.9rem;
-  }
-  .hero-figure{
-    justify-self:center;
-    width: 100%;
-    max-width: 360px;
-    aspect-ratio: 3/4;
-    position: relative;
-    border: 1px solid var(--line-on-ink);
-    border-radius: 3px;
-    background: linear-gradient(160deg, var(--ink-3), var(--ink-2));
-  }
-  .hero-figure .frame-corner{
-    position:absolute; width: 22px; height: 22px;
-    border: 1.5px solid var(--brass);
-  }
+  .page-section{ display:none; }
+  .page-section.active{ display:block; }
+
+  .hero{ background:radial-gradient(ellipse 900px 500px at 85% -10%, rgba(199,150,60,0.16), transparent 60%), radial-gradient(ellipse 700px 500px at 0% 100%, rgba(124,145,114,0.10), transparent 60%), var(--ink); color:var(--ivory); padding:clamp(3.5rem,8vw,6.5rem) 0 0; position:relative; overflow:hidden; }
+  .hero-inner{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:3rem; align-items:center; padding-bottom:clamp(2.5rem,5vw,4rem); }
+  .hero h1{ font-size:clamp(2.15rem,4vw,3.4rem); margin-top:1.1rem; max-width:15ch; }
+  .hero h1 em{ font-style:italic; color:var(--brass-light); }
+  .hero p.lede{ margin-top:1.4rem; max-width:46ch; color:rgba(244,240,230,0.78); font-size:1.04rem; }
+  .hero-ctas{ margin-top:2.1rem; display:flex; flex-wrap:wrap; gap:0.9rem; }
+  .hero-figure{ justify-self:center; width:100%; max-width:360px; aspect-ratio:3/4; position:relative; border:1px solid var(--line-on-ink); border-radius:3px; background:linear-gradient(160deg,var(--ink-3),var(--ink-2)); }
+  .hero-figure .frame-corner{ position:absolute; width:22px; height:22px; border:1.5px solid var(--brass); }
   .fc-tl{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
   .fc-br{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
-  .hero-figure .figure-body{
-    position:absolute; inset:0;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    padding: 1.6rem;
-    text-align:center;
-  }
-  .figure-seal{
-    width: 74px; height: 74px;
-    border-radius: 50%;
-    border: 1px solid var(--brass);
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom: 1.3rem;
-  }
-  .figure-seal svg{ width: 32px; height: 32px; stroke: var(--brass); }
-  .figure-body .fig-title{
-    font-family:'Fraunces', serif;
-    font-size: 1.15rem;
-    font-style: italic;
-    color: var(--ivory);
-  }
-  .figure-body .fig-sub{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ivory-dim);
-    margin-top: 0.6rem;
-  }
-  .figure-body .fig-rule{
-    width: 34px; height:1px; background: var(--line-on-ink); margin: 1rem 0;
-  }
+  .hero-figure .figure-body{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.6rem; text-align:center; }
+  .figure-body .fig-title{ font-family:'Fraunces',serif; font-size:1.15rem; font-style:italic; color:var(--ivory); }
+  .figure-body .fig-sub{ font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:rgba(244,240,230,0.7); margin-top:0.6rem; }
+  .figure-body .fig-rule{ width:34px; height:1px; background:var(--line-on-ink); margin:1rem 0; }
+  @media (max-width:900px){ .hero-inner{ grid-template-columns:1fr; } .hero-figure{ display:none; } }
 
-  @media (max-width: 900px){
-    .hero-inner{ grid-template-columns: 1fr; }
-    .hero-figure{ display:none; }
-  }
+  .clockstrip-wrap{ border-top:1px solid var(--line-on-ink); background:rgba(0,0,0,0.14); }
+  .clockstrip-label{ padding-top:1.6rem; color:rgba(244,240,230,0.55); }
+  .clockstrip{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line-on-ink); margin-top:1.2rem; }
+  .clock-card{ background:var(--ink); padding:1.5rem 1.25rem 1.7rem; display:flex; flex-direction:column; gap:0.5rem; transition:background .4s ease; }
+  .clock-card.is-night{ background:#0C1712; }
+  .clock-city{ font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(244,240,230,0.78); }
+  .clock-time{ font-family:'Fraunces',serif; font-variant-numeric:tabular-nums; font-size:clamp(1.5rem,2.4vw,1.9rem); color:var(--ivory); }
+  .clock-phase{ font-family:'IBM Plex Mono',monospace; font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--sage); }
+  .clock-card.is-night .clock-phase{ color:var(--brass); }
+  .clock-card--home{ background:linear-gradient(160deg,rgba(199,150,60,0.14),rgba(199,150,60,0.03)); border-top:2px solid var(--brass); }
+  .clock-card--home .clock-city,.clock-card--home .clock-phase{ color:var(--brass-light); }
+  @media (max-width:700px){ .clockstrip{ grid-template-columns:repeat(2,1fr); } }
 
-  /* ---------- CLOCK STRIP ---------- */
-  .clockstrip-wrap{
-    border-top: 1px solid var(--line-on-ink);
-    background: rgba(0,0,0,0.14);
-  }
-  .clockstrip-label{
-    padding-top: 1.6rem;
-    color: var(--ivory-faint);
-  }
-  .clockstrip{
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--line-on-ink);
-    margin-top: 1.2rem;
-  }
-  .clock-card{
-    background: var(--ink);
-    padding: 1.5rem 1.25rem 1.7rem;
-    display:flex;
-    flex-direction:column;
-    gap: 0.5rem;
-    transition: background 0.4s ease;
-  }
-  .clock-card.is-night{ background: #0C1712; }
-  .clock-city{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.66rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ivory-dim);
-  }
-  .clock-time{
-    font-family:'Fraunces', serif;
-    font-variant-numeric: tabular-nums;
-    font-size: clamp(1.5rem, 2.4vw, 1.9rem);
-    color: var(--ivory);
-  }
-  .clock-phase{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.64rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--sage);
-  }
-  .clock-card.is-night .clock-phase{ color: var(--brass); }
-  .clock-card--home{
-    background: linear-gradient(160deg, rgba(199,150,60,0.14), rgba(199,150,60,0.03));
-    border-top: 2px solid var(--brass);
-  }
-  .clock-card--home .clock-city{ color: var(--brass-light); }
-  .clock-card--home .clock-phase{ color: var(--brass-light); }
+  .page-header{ background:var(--ink); color:var(--ivory); padding:clamp(3.5rem,7vw,5rem) 0 clamp(2.5rem,5vw,3.5rem); }
+  .page-header h1{ font-size:clamp(2rem,4vw,3rem); margin-top:1rem; max-width:20ch; color:var(--ivory); }
+  .page-header p{ margin-top:1.1rem; max-width:56ch; color:rgba(244,240,230,0.75); font-size:1.05rem; }
 
-  @media (max-width: 700px){
-    .clockstrip{ grid-template-columns: repeat(2, 1fr); }
-  }
+  .teasers{ padding:clamp(4rem,8vw,6rem) 0; }
+  .teasers-head{ max-width:60ch; }
+  .teasers-head h2{ font-size:clamp(1.7rem,3vw,2.3rem); margin-top:1rem; }
+  .teaser-grid{ margin-top:2.8rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.6rem; }
+  .teaser-card{ border:1px solid var(--line-on-ivory); background:#FBF9F3; padding:2rem 1.8rem; display:flex; flex-direction:column; }
+  .teaser-card h3{ font-size:1.25rem; margin-top:0.9rem; }
+  .teaser-card p{ margin-top:0.7rem; font-size:0.94rem; color:rgba(33,30,26,0.68); line-height:1.6; flex-grow:1; }
+  .teaser-card .teaser-link{ margin-top:1.3rem; font-family:'IBM Plex Mono',monospace; font-size:0.78rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--oxide); font-weight:600; cursor:pointer; }
+  .teaser-icon{ width:46px; height:46px; border-radius:50%; border:1px solid var(--oxide); display:flex; align-items:center; justify-content:center; }
+  .teaser-icon svg{ width:21px; height:21px; stroke:var(--oxide); fill:none; stroke-width:1.3; stroke-linecap:round; stroke-linejoin:round; }
 
-  /* ---------- ABOUT ---------- */
-  .about{
-    padding: clamp(4rem,8vw,6rem) 0;
-  }
-  .about-grid{
-    display:grid;
-    grid-template-columns: 0.9fr 1.5fr;
-    gap: clamp(2rem,5vw,4.5rem);
-    margin-top: 1.6rem;
-  }
-  .about h2{
-    font-size: clamp(1.7rem, 3vw, 2.3rem);
-    max-width: 12ch;
-  }
-  .about-copy p{
-    font-size: 1.04rem;
-    color: var(--charcoal-dim);
-    max-width: 62ch;
-  }
-  .about-copy p + p{ margin-top: 1rem; }
-  .about-stats{
-    display:flex;
-    gap: clamp(1.5rem,4vw,3rem);
-    margin-top: 2rem;
-    flex-wrap: wrap;
-  }
-  .stat .num{
-    font-family:'Fraunces', serif;
-    font-size: 2rem;
-    color: var(--oxide);
-  }
-  .stat .label{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--charcoal-dim);
-    margin-top: 0.25rem;
-  }
-  @media (max-width: 820px){
-    .about-grid{ grid-template-columns: 1fr; }
-  }
+  .home-why-strip{ background:var(--ink); color:var(--ivory); padding:clamp(3.5rem,7vw,5rem) 0; }
+  .home-why-grid{ margin-top:2.4rem; display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; }
+  .home-why-item{ padding-top:1.1rem; border-top:2px solid var(--brass); }
+  .home-why-item h3{ font-size:1rem; color:var(--ivory); }
+  .home-why-item p{ margin-top:0.5rem; font-size:0.86rem; color:rgba(244,240,230,0.66); }
+  @media (max-width:900px){ .home-why-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .home-why-grid{ grid-template-columns:1fr; } }
 
-  /* ---------- SERVICES ---------- */
-  .services{
-    background: var(--ink);
-    color: var(--ivory);
-    padding: clamp(4rem,8vw,6.5rem) 0;
-  }
-  .services-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  .services-head h2{
-    color: var(--ivory);
-    font-size: clamp(1.7rem, 3vw, 2.3rem);
-    margin-top: 1rem;
-    max-width: 16ch;
-  }
-  .services-head p{
-    max-width: 40ch;
-    color: var(--ivory-dim);
-    font-size: 0.98rem;
-  }
-  .services-grid{
-    margin-top: 3rem;
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1px;
-    background: var(--line-on-ink);
-    border: 1px solid var(--line-on-ink);
-  }
-  .service-card{
-    background: var(--ink);
-    padding: 1.9rem 1.7rem;
-    transition: background 0.3s ease;
-  }
-  .service-card:hover{ background: var(--ink-2); }
-  .service-icon{
-    width: 42px; height: 42px;
-    border-radius: 50%;
-    border: 1px solid var(--brass);
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom: 1.2rem;
-  }
-  .service-icon svg{
-    width: 20px; height: 20px;
-    stroke: var(--brass);
-    fill: none;
-    stroke-width: 1.3;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-  .service-card h3{
-    font-size: 1.08rem;
-    color: var(--ivory);
-    font-weight: 500;
-  }
-  .service-card p{
-    margin-top: 0.6rem;
-    font-size: 0.92rem;
-    color: var(--ivory-dim);
-    line-height: 1.55;
-  }
+  .about{ padding:clamp(4rem,8vw,6rem) 0; }
+  .about-grid{ display:grid; grid-template-columns:0.9fr 1.5fr; gap:clamp(2rem,5vw,4.5rem); margin-top:1.6rem; }
+  .about h2{ font-size:clamp(1.7rem,3vw,2.3rem); max-width:12ch; }
+  .about-copy p{ font-size:1.04rem; color:rgba(33,30,26,0.72); max-width:62ch; }
+  .about-stats{ display:flex; gap:clamp(1.5rem,4vw,3rem); margin-top:2rem; flex-wrap:wrap; }
+  .stat .num{ font-family:'Fraunces',serif; font-size:2rem; color:var(--oxide); }
+  .stat .label{ font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:rgba(33,30,26,0.6); margin-top:0.25rem; }
+  @media (max-width:820px){ .about-grid{ grid-template-columns:1fr; } }
 
-  /* ---------- PLANS ---------- */
-  .plans{
-    padding: clamp(4rem,8vw,6.5rem) 0;
-  }
-  .plans-head{ max-width: 60ch; }
-  .plans-head h2{
-    font-size: clamp(1.7rem, 3vw, 2.3rem);
-    margin-top: 1rem;
-  }
-  .plans-head p{
-    margin-top: 1rem;
-    color: var(--charcoal-dim);
-    font-size: 1.02rem;
-  }
-  .plans-grid{
-    margin-top: 3rem;
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.4rem;
-  }
-  .plan-card{
-    border: 1px solid var(--line-on-ivory);
-    background: #FBF9F3;
-    padding: 2rem 1.6rem 2.2rem;
-    display:flex;
-    flex-direction:column;
-    position:relative;
-  }
-  .plan-card--featured{
-    border-color: var(--brass);
-    box-shadow: var(--shadow);
-    background: #FFFDF7;
-  }
-  .plan-tag{
-    position:absolute;
-    top: -13px; left: 1.6rem;
-    background: var(--brass);
-    color: var(--ink);
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.3rem 0.65rem;
-  }
-  .plan-numeral{
-    font-family:'Fraunces', serif;
-    font-style: italic;
-    font-size: 0.95rem;
-    color: var(--oxide);
-  }
-  .plan-card h3{
-    font-size: 1.32rem;
-    margin-top: 0.5rem;
-  }
-  .plan-price{
-    margin-top: 0.9rem;
-    font-family:'IBM Plex Mono', monospace;
-  }
-  .plan-price .amt{
-    font-size: 1.5rem;
-    color: var(--charcoal);
-  }
-  .plan-price .per{
-    font-size: 0.78rem;
-    color: var(--charcoal-dim);
-  }
-  .plan-price .yr{
-    display:block;
-    margin-top: 0.2rem;
-    font-size: 0.76rem;
-    color: var(--charcoal-dim);
-  }
-  .plan-for{
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--line-on-ivory);
-    font-size: 0.86rem;
-    color: var(--charcoal-dim);
-    font-style: italic;
-  }
-  .plan-list{
-    list-style:none;
-    margin: 1.2rem 0 0;
-    padding: 0;
-    flex-grow: 1;
-  }
-  .plan-list li{
-    display:flex;
-    gap: 0.6rem;
-    align-items:flex-start;
-    font-size: 0.88rem;
-    padding: 0.4rem 0;
-    color: var(--charcoal);
-  }
-  .plan-list .check-icon{
-    width: 14px; height: 14px;
-    stroke: var(--oxide);
-    fill:none;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    flex-shrink: 0;
-    margin-top: 0.2rem;
-  }
-  .plan-cta{ margin-top: 1.6rem; }
-  .plan-cta .btn{ width:100%; justify-content:center; }
+  .services{ background:var(--ink); color:var(--ivory); padding:clamp(3rem,6vw,4.5rem) 0 clamp(4rem,8vw,6.5rem); }
+  .services-list{ margin-top:1rem; display:flex; flex-direction:column; }
+  .service-row{ display:grid; grid-template-columns:90px 1fr; gap:1.8rem; padding:2.4rem 0; border-bottom:1px solid var(--line-on-ink); }
+  .service-row:first-child{ padding-top:2.8rem; }
+  .service-icon-lg{ width:64px; height:64px; border-radius:50%; border:1px solid var(--brass); display:flex; align-items:center; justify-content:center; }
+  .service-icon-lg svg{ width:28px; height:28px; stroke:var(--brass); fill:none; stroke-width:1.3; stroke-linecap:round; stroke-linejoin:round; }
+  .service-row h3{ font-size:1.35rem; color:var(--ivory); }
+  .service-row p{ margin-top:0.7rem; font-size:0.98rem; color:rgba(244,240,230,0.72); line-height:1.7; max-width:66ch; }
+  @media (max-width:640px){ .service-row{ grid-template-columns:1fr; } }
 
-  @media (max-width: 1080px){
-    .plans-grid{ grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 620px){
-    .plans-grid{ grid-template-columns: 1fr; }
-  }
+  .plans{ padding:clamp(4rem,8vw,6.5rem) 0; }
+  .plans-head{ max-width:60ch; }
+  .plans-head h2{ font-size:clamp(1.7rem,3vw,2.3rem); margin-top:1rem; }
+  .plans-head p{ margin-top:1rem; color:rgba(33,30,26,0.72); font-size:1.02rem; }
+  .plans-grid{ margin-top:3rem; display:grid; grid-template-columns:repeat(4,1fr); gap:1.4rem; }
+  .plan-card{ border:1px solid var(--line-on-ivory); background:#FBF9F3; padding:2rem 1.6rem 2.2rem; display:flex; flex-direction:column; position:relative; }
+  .plan-card--featured{ border-color:var(--brass); box-shadow:var(--shadow); background:#FFFDF7; }
+  .plan-tag{ position:absolute; top:-13px; left:1.6rem; background:var(--brass); color:var(--ink); font-family:'IBM Plex Mono',monospace; font-size:0.62rem; letter-spacing:0.08em; text-transform:uppercase; padding:0.3rem 0.65rem; }
+  .plan-numeral{ font-family:'Fraunces',serif; font-style:italic; font-size:0.95rem; color:var(--oxide); }
+  .plan-card h3{ font-size:1.32rem; margin-top:0.5rem; }
+  .plan-price{ margin-top:0.9rem; font-family:'IBM Plex Mono',monospace; }
+  .plan-price .amt{ font-size:1.5rem; color:var(--charcoal); }
+  .plan-price .per{ font-size:0.78rem; color:rgba(33,30,26,0.6); }
+  .plan-price .yr{ display:block; margin-top:0.2rem; font-size:0.76rem; color:rgba(33,30,26,0.6); }
+  .plan-for{ margin-top:1rem; padding-top:1rem; border-top:1px solid var(--line-on-ivory); font-size:0.86rem; color:rgba(33,30,26,0.68); font-style:italic; }
+  .plan-list{ list-style:none; margin:1.2rem 0 0; padding:0; flex-grow:1; }
+  .plan-list li{ display:flex; gap:0.6rem; align-items:flex-start; font-size:0.88rem; padding:0.4rem 0; color:var(--charcoal); }
+  .plan-list .check-icon{ width:14px; height:14px; stroke:var(--oxide); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; margin-top:0.2rem; }
+  .plan-cta{ margin-top:1.6rem; } .plan-cta .btn{ width:100%; justify-content:center; }
+  @media (max-width:1080px){ .plans-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:620px){ .plans-grid{ grid-template-columns:1fr; } }
 
-  /* ---------- LEDGER (one-time services) ---------- */
-  .ledger{
-    background: var(--ink-2);
-    color: var(--ivory);
-    padding: clamp(4rem,8vw,6.5rem) 0;
-  }
-  .ledger-head h2{
-    color: var(--ivory);
-    font-size: clamp(1.7rem, 3vw, 2.3rem);
-    margin-top: 1rem;
-    max-width: 20ch;
-  }
-  .ledger-table{
-    margin-top: 2.6rem;
-    border-top: 1px solid var(--line-on-ink);
-  }
-  .ledger-row{
-    display:grid;
-    grid-template-columns: 1.4fr 0.7fr 2fr;
-    gap: 1.5rem;
-    align-items:baseline;
-    padding: 1.35rem 0;
-    border-bottom: 1px solid var(--line-on-ink);
-  }
-  .ledger-name{
-    font-family:'Fraunces', serif;
-    font-size: 1.08rem;
-    color: var(--ivory);
-  }
-  .ledger-price{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.94rem;
-    color: var(--brass-light);
-    text-align: right;
-  }
-  .ledger-includes{
-    font-size: 0.86rem;
-    color: var(--ivory-dim);
-  }
-  @media (max-width: 760px){
-    .ledger-row{ grid-template-columns: 1fr; gap: 0.4rem; }
-    .ledger-price{ text-align:left; }
-  }
+  .ledger{ background:var(--ink-2); color:var(--ivory); padding:clamp(4rem,8vw,6.5rem) 0; }
+  .ledger-head h2{ color:var(--ivory); font-size:clamp(1.7rem,3vw,2.3rem); margin-top:1rem; max-width:20ch; }
+  .ledger-table{ margin-top:2.6rem; border-top:1px solid var(--line-on-ink); }
+  .ledger-row{ display:grid; grid-template-columns:1.4fr 0.7fr 2fr; gap:1.5rem; align-items:baseline; padding:1.35rem 0; border-bottom:1px solid var(--line-on-ink); }
+  .ledger-name{ font-family:'Fraunces',serif; font-size:1.08rem; color:var(--ivory); }
+  .ledger-price{ font-family:'IBM Plex Mono',monospace; font-size:0.94rem; color:var(--brass-light); text-align:right; }
+  .ledger-includes{ font-size:0.86rem; color:rgba(244,240,230,0.72); }
+  @media (max-width:760px){ .ledger-row{ grid-template-columns:1fr; gap:0.4rem; } .ledger-price{ text-align:left; } }
 
-  /* ---------- WHY ---------- */
-  .why{ padding: clamp(4rem,8vw,6.5rem) 0; }
-  .why-grid{
-    margin-top: 2.6rem;
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
-  .why-item{
-    padding-top: 1.3rem;
-    border-top: 2px solid var(--oxide);
-  }
-  .why-item h3{ font-size: 1.05rem; }
-  .why-item p{
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    color: var(--charcoal-dim);
-  }
-  @media (max-width: 900px){
-    .why-grid{ grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 560px){
-    .why-grid{ grid-template-columns: 1fr; }
-  }
+  .why-detail{ padding:clamp(3rem,6vw,4.5rem) 0; }
+  .why-detail-grid{ margin-top:1rem; display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line-on-ivory); border:1px solid var(--line-on-ivory); }
+  .why-detail-item{ background:var(--ivory); padding:2.4rem 2.2rem; }
+  .why-detail-item .num{ font-family:'Fraunces',serif; font-style:italic; font-size:1.3rem; color:var(--oxide); }
+  .why-detail-item h3{ font-size:1.4rem; margin-top:0.6rem; }
+  .why-detail-item p{ margin-top:0.8rem; font-size:0.98rem; color:rgba(33,30,26,0.7); line-height:1.7; }
+  @media (max-width:700px){ .why-detail-grid{ grid-template-columns:1fr; } }
 
-  /* ---------- CONTACT / FOOTER ---------- */
-  .contact{
-    background: var(--ink);
-    color: var(--ivory);
-    padding: clamp(4.5rem,9vw,7rem) 0 0;
-  }
-  .contact-inner{
-    display:grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 3rem;
-    padding-bottom: clamp(3rem,6vw,4.5rem);
-    border-bottom: 1px solid var(--line-on-ink);
-  }
-  .contact h2{
-    font-size: clamp(1.9rem, 4vw, 2.8rem);
-    color: var(--ivory);
-    max-width: 14ch;
-  }
-  .contact h2 em{ color: var(--brass-light); font-style: italic; }
-  .contact-ctas{ margin-top: 2rem; display:flex; gap: 0.9rem; flex-wrap:wrap; }
-  .contact-details{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.9rem;
-    color: var(--ivory-dim);
-    line-height: 2;
-  }
-  .contact-details .row-label{
-    color: var(--brass);
-    display:inline-block;
-    width: 84px;
-  }
-  .contact-details a:hover{ color: var(--brass-light); }
-  .footer-bottom{
-    padding: 1.6rem 0;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap: 0.6rem;
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--ivory-faint);
-  }
+  .steps{ background:var(--ink-2); color:var(--ivory); padding:clamp(4rem,8vw,6.5rem) 0; }
+  .steps-head h2{ color:var(--ivory); font-size:clamp(1.7rem,3vw,2.3rem); margin-top:1rem; max-width:20ch; }
+  .steps-grid{ margin-top:2.8rem; display:grid; grid-template-columns:repeat(5,1fr); gap:1.2rem; }
+  .step-card{ border-top:2px solid var(--brass); padding-top:1.1rem; }
+  .step-card .n{ font-family:'Fraunces',serif; font-style:italic; font-size:1.6rem; color:var(--brass-light); }
+  .step-card h3{ font-size:1rem; margin-top:0.4rem; color:var(--ivory); }
+  .step-card p{ margin-top:0.5rem; font-size:0.85rem; color:rgba(244,240,230,0.66); line-height:1.5; }
+  @media (max-width:980px){ .steps-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .steps-grid{ grid-template-columns:1fr; } }
 
-  @media (max-width: 820px){
-    .contact-inner{ grid-template-columns: 1fr; }
-  }
+  .areas{ padding:clamp(4rem,8vw,6.5rem) 0; }
+  .areas-grid{ margin-top:1rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1px; background:var(--line-on-ivory); border:1px solid var(--line-on-ivory); }
+  .area-card{ background:var(--ivory); padding:1.8rem 1.7rem; }
+  .area-card .pin{ width:38px; height:38px; border-radius:50%; border:1px solid var(--oxide); display:flex; align-items:center; justify-content:center; margin-bottom:1.1rem; }
+  .area-card .pin svg{ width:17px; height:17px; stroke:var(--oxide); fill:none; stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round; }
+  .area-card h3{ font-size:1.1rem; font-weight:500; }
+  .area-card p{ margin-top:0.6rem; font-size:0.9rem; color:rgba(33,30,26,0.66); line-height:1.6; }
 
-  @media (prefers-reduced-motion: reduce){
-    *{ transition: none !important; animation: none !important; }
-  }
+  .faq{ padding:clamp(4rem,8vw,6.5rem) 0; }
+  .faq-list{ margin-top:1rem; border-top:1px solid var(--line-on-ivory); max-width:800px; }
+  .faq-item{ border-bottom:1px solid var(--line-on-ivory); }
+  .faq-item summary{ padding:1.3rem 0; font-family:'Fraunces',serif; font-size:1.08rem; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem; }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::after{ content:"+"; font-family:'Archivo',sans-serif; font-size:1.4rem; color:var(--oxide); flex-shrink:0; transition:transform .25s ease; }
+  .faq-item[open] summary::after{ transform:rotate(45deg); }
+  .faq-item p{ margin:0 0 1.4rem; font-size:0.96rem; color:rgba(33,30,26,0.7); max-width:66ch; line-height:1.65; }
 
-  .fade-up{
-    animation: fadeUp 0.9s ease both;
-  }
-  .fade-up.delay-1{ animation-delay: 0.12s; }
-  .fade-up.delay-2{ animation-delay: 0.24s; }
-  @keyframes fadeUp{
-    from{ opacity:0; transform: translateY(16px); }
-    to{ opacity:1; transform: translateY(0); }
-  }
+  .insights{ background:var(--ivory-2); padding:clamp(4rem,8vw,6.5rem) 0; margin-top:clamp(2rem,4vw,3rem); }
+  .insights-head h2{ font-size:clamp(1.7rem,3vw,2.3rem); margin-top:1rem; max-width:18ch; }
+  .insights-grid{ margin-top:2.8rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.6rem; }
+  .insight-card{ background:#FFFDF7; border:1px solid var(--line-on-ivory); padding:1.8rem 1.7rem; }
+  .insight-card .tag{ font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--oxide); }
+  .insight-card h3{ font-size:1.15rem; margin-top:0.6rem; }
+  .insight-card p{ margin-top:0.7rem; font-size:0.92rem; color:rgba(33,30,26,0.68); line-height:1.6; }
+
+  .contact-cta{ background:var(--ink); color:var(--ivory); padding:clamp(4rem,8vw,6rem) 0; }
+  .contact-cta-inner{ display:grid; grid-template-columns:1.2fr 1fr; gap:3rem; }
+  .contact-cta h2{ font-size:clamp(1.9rem,4vw,2.6rem); color:var(--ivory); max-width:16ch; }
+  .contact-cta h2 em{ color:var(--brass-light); font-style:italic; }
+  .contact-ctas{ margin-top:2rem; display:flex; gap:0.9rem; flex-wrap:wrap; }
+  .contact-details{ font-family:'IBM Plex Mono',monospace; font-size:0.9rem; color:rgba(244,240,230,0.72); line-height:2; }
+  .contact-details .row-label{ color:var(--brass); display:inline-block; width:84px; }
+  .contact-details a:hover{ color:var(--brass-light); }
+  .social-row{ margin-top:1.6rem; display:flex; gap:1rem; }
+  .social-row a{ font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:rgba(244,240,230,0.55); border:1px solid var(--line-on-ink); padding:0.4rem 0.8rem; }
+  .social-row a:hover{ color:var(--brass-light); border-color:var(--brass); }
+  @media (max-width:820px){ .contact-cta-inner{ grid-template-columns:1fr; } }
+
+  .site-footer{ background:var(--ink); border-top:1px solid var(--line-on-ink); padding:1.6rem 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.6rem; font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:rgba(244,240,230,0.4); }
+
+  @media (prefers-reduced-motion: reduce){ *{ transition:none !important; animation:none !important; } }
+  .fade-up{ animation:fadeUp .9s ease both; }
+  .fade-up.delay-1{ animation-delay:.12s; }
+  @keyframes fadeUp{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:translateY(0); } }
 </style>
 </head>
 <body>
 
-<svg style="display:none" aria-hidden="true">
-  <symbol id="ic-check" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></symbol>
-</svg>
+<svg style="display:none" aria-hidden="true"><symbol id="ic-check" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></symbol></svg>
 
-<!-- ================= NAV ================= -->
+<!-- ================= NAV (shared across all sections) ================= -->
 <nav class="site-nav">
   <div class="container">
-    <div class="brandmark">
+    <div class="brandmark" data-goto="home">
       <span class="word">PROPERTAGE&trade;</span>
-      <!--<span class="sub">ASAR Property Management LLP</span> -->
+      <span class="sub">ASAR Property Management LLP</span>
     </div>
     <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#plans">Plans</a>
-      <a href="#why">Why Us</a>
-      <a href="#contact">Contact</a>
+      <a data-goto="home" class="active">Home</a>
+      <a data-goto="services">Services</a>
+      <a data-goto="plans">Plans</a>
+      <a data-goto="why-us">Why Us</a>
+      <a data-goto="areas">Areas</a>
+      <a data-goto="faq">FAQ</a>
+      <a data-goto="contact">Contact</a>
     </div>
     <div class="nav-actions">
       <a class="btn btn-ghost" href="tel:+919686345696">+91 96863 45696</a>
-      <a class="btn btn-primary" href="https://wa.me/919686345696?text=Hi%20PROPERTAGE%2C%20I%27d%20like%20to%20know%20more%20about%20your%20property%20management%20plans." target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-primary" href="https://wa.me/919686345696?text=Hi%20PROPERTAGE%E2%84%A2%2C%20I%27d%20like%20to%20know%20more%20about%20your%20property%20management%20plans." target="_blank" rel="noopener">WhatsApp</a>
+      <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a data-goto="home" class="active">Home</a>
+    <a data-goto="services">Services</a>
+    <a data-goto="plans">Plans</a>
+    <a data-goto="why-us">Why Us</a>
+    <a data-goto="areas">Areas</a>
+    <a data-goto="faq">FAQ</a>
+    <a data-goto="contact">Contact</a>
+    <div class="mobile-ctas">
+      <a class="btn btn-ghost" href="tel:+919686345696">Call Now</a>
+      <a class="btn btn-primary" href="https://wa.me/919686345696?text=Hi%20PROPERTAGE%E2%84%A2%2C%20I%27d%20like%20to%20know%20more%20about%20your%20property%20management%20plans." target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </nav>
 
-<!-- ================= HERO ================= -->
-<header class="hero">
-  <div class="container hero-inner">
-    <div class="fade-up">
-      <span class="eyebrow">Bengaluru · NRI &amp; Local Property Owners</span>
-      <h1>Your property keeps Bengaluru hours. <em>So do we</em> — whatever hour it is for you.</h1>
-      <p class="lede">PROPERTAGE looks after apartments, villas and investment properties across Bengaluru for owners living anywhere in the world — inspections, tenants, rent, repairs and paperwork, managed on the ground and reported straight back to you.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-primary" href="https://wa.me/919686345696?text=Hi%20PROPERTAGE%2C%20I%27d%20like%20to%20know%20more%20about%20your%20property%20management%20plans." target="_blank" rel="noopener">Message on WhatsApp</a>
-        <a class="btn btn-ghost" href="tel:+919686345696">Call +91 96863 45696</a>
-      </div>
-    </div>
-    <div class="hero-figure fade-up delay-1">
-      <span class="frame-corner fc-tl"></span>
-      <span class="frame-corner fc-br"></span>
-      <div class="figure-body">
-        <div class="figure-seal">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5.5"/><ellipse cx="12" cy="12" rx="2.2" ry="5.5"/><line x1="6.5" y1="12" x2="17.5" y2="12"/></svg>
+<!-- ================= HOME ================= -->
+<section id="page-home" class="page-section active">
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="fade-up">
+        <span class="eyebrow">Bengaluru &middot; NRI &amp; Local Property Owners</span>
+        <h1>Your property keeps Bengaluru hours. <em>So do we</em> &mdash; whatever hour it is for you.</h1>
+        <p class="lede">PROPERTAGE&trade; looks after apartments, villas and investment properties across Bengaluru for owners living anywhere in the world &mdash; inspections, tenants, rent, repairs and paperwork, managed on the ground and reported straight back to you.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://wa.me/919686345696?text=Hi%20PROPERTAGE%E2%84%A2%2C%20I%27d%20like%20to%20know%20more%20about%20your%20property%20management%20plans." target="_blank" rel="noopener">Message on WhatsApp</a>
+          <a class="btn btn-ghost" data-goto="services">Explore Our Services</a>
         </div>
-        <div class="fig-title">Effortless Ownership.</div>
-        <div class="fig-rule"></div>
-        <div class="fig-sub">Complete Peace of Mind</div>
+      </div>
+      <div class="hero-figure fade-up delay-1">
+        <span class="frame-corner fc-tl"></span><span class="frame-corner fc-br"></span>
+        <div class="figure-body">
+          <div class="fig-title">Effortless Ownership.</div>
+          <div class="fig-rule"></div>
+          <div class="fig-sub">Complete Peace of Mind</div>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="clockstrip-wrap">
+      <div class="container">
+        <div class="clockstrip-label eyebrow">A few of the cities our owners call home</div>
+        <div class="clockstrip">
+          <div class="clock-card" data-tz="Europe/London"><span class="clock-city">London</span><span class="clock-time">&mdash;:&mdash;</span><span class="clock-phase">&mdash;</span></div>
+          <div class="clock-card" data-tz="Asia/Dubai"><span class="clock-city">Dubai</span><span class="clock-time">&mdash;:&mdash;</span><span class="clock-phase">&mdash;</span></div>
+          <div class="clock-card" data-tz="America/Los_Angeles"><span class="clock-city">San Francisco</span><span class="clock-time">&mdash;:&mdash;</span><span class="clock-phase">&mdash;</span></div>
+          <div class="clock-card clock-card--home" data-tz="Asia/Kolkata"><span class="clock-city">Bengaluru</span><span class="clock-time">&mdash;:&mdash;</span><span class="clock-phase">Propertage&trade;, on site</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <div class="clockstrip-wrap">
+  <section class="about">
+    <div class="container about-grid">
+      <div><span class="eyebrow">About Propertage&trade;</span><h2>Professional management. Complete accountability.</h2></div>
+      <div class="about-copy">
+        <p>PROPERTAGE&trade;, a brand of ASAR Property Management LLP, helps property owners protect, maintain and maximise the value of their real estate assets across Bengaluru &mdash; whether you own a vacant apartment, a rented flat, a villa, or several investment properties.</p>
+        <div class="about-stats">
+          <div class="stat"><div class="num">4</div><div class="label">Management Plans</div></div>
+          <div class="stat"><div class="num">10+</div><div class="label">Signature Services</div></div>
+          <div class="stat"><div class="num">1</div><div class="label">Dedicated Point of Contact</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="teasers">
     <div class="container">
-      <div class="clockstrip-label eyebrow">A few of the cities our owners call home</div>
-      <div class="clockstrip">
-        <div class="clock-card" data-tz="Europe/London">
-          <span class="clock-city">London</span>
-          <span class="clock-time">—:—</span>
-          <span class="clock-phase">—</span>
+      <div class="teasers-head"><span class="eyebrow">Find What You're Looking For</span><h2>A quick way to the page you need.</h2></div>
+      <div class="teaser-grid">
+        <div class="teaser-card">
+          <div class="teaser-icon"><svg viewBox="0 0 24 24"><path d="M7 13.5L12 9l5 4.5"/><path d="M8.5 12.5V17h7v-4.5"/></svg></div>
+          <h3>Signature Services</h3>
+          <p>Everything from tenant search to Khata transfer and BESCOM name changes &mdash; ten services, explained in full.</p>
+          <span class="teaser-link" data-goto="services">View All Services &rarr;</span>
         </div>
-        <div class="clock-card" data-tz="Asia/Dubai">
-          <span class="clock-city">Dubai</span>
-          <span class="clock-time">—:—</span>
-          <span class="clock-phase">—</span>
+        <div class="teaser-card">
+          <div class="teaser-icon"><svg viewBox="0 0 24 24"><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="7" y1="15" x2="13" y2="15"/></svg></div>
+          <h3>Management Plans</h3>
+          <p>Four levels of care, from a watchful eye on a vacant flat to full concierge management &mdash; plus one-time services.</p>
+          <span class="teaser-link" data-goto="plans">See Plans &amp; Pricing &rarr;</span>
         </div>
-        <div class="clock-card" data-tz="America/Los_Angeles">
-          <span class="clock-city">San Francisco</span>
-          <span class="clock-time">—:—</span>
-          <span class="clock-phase">—</span>
+        <div class="teaser-card">
+          <div class="teaser-icon"><svg viewBox="0 0 24 24"><path d="M12 4l7 3v5c0 5-3 7.5-7 8.5C8 19.5 5 17 5 12V7l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Why Propertage&trade;</h3>
+          <p>What makes us different, and exactly how we work &mdash; from your first message to ongoing management.</p>
+          <span class="teaser-link" data-goto="why-us">Learn More &rarr;</span>
         </div>
-        <div class="clock-card clock-card--home" data-tz="Asia/Kolkata">
-          <span class="clock-city">Bengaluru</span>
-          <span class="clock-time">—:—</span>
-          <span class="clock-phase">Propertage, on site</span>
+        <div class="teaser-card">
+          <div class="teaser-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0114 0c0 3.5-3 7-7 11z"/></svg></div>
+          <h3>Areas We Serve</h3>
+          <p>Koramangala, HSR Layout, Indiranagar, Whitefield, Electronic City, Marathahalli, Sarjapur Road &amp; beyond.</p>
+          <span class="teaser-link" data-goto="areas">View Coverage &rarr;</span>
         </div>
       </div>
     </div>
-  </div>
-</header>
+  </section>
 
-<!-- ================= ABOUT ================= -->
-<section class="about">
-  <div class="container about-grid">
-    <div>
-      <span class="eyebrow">About Propertage</span>
-      <h2>Professional management. Complete accountability.</h2>
-    </div>
-    <div class="about-copy">
-      <p>PROPERTAGE, a brand of ASAR Property Management LLP, helps property owners protect, maintain and maximise the value of their real estate assets across Bengaluru.</p>
-      <p>Whether you own a vacant apartment, a rented flat, a villa, or several investment properties, our team provides end-to-end management with complete transparency and accountability — so ownership stays effortless, wherever you happen to be.</p>
-      <div class="about-stats">
-        <div class="stat">
-          <div class="num">4</div>
-          <div class="label">Management Plans</div>
-        </div>
-        <div class="stat">
-          <div class="num">10+</div>
-          <div class="label">Signature Services</div>
-        </div>
-        <div class="stat">
-          <div class="num">1</div>
-          <div class="label">Dedicated Point of Contact</div>
-        </div>
+  <section class="home-why-strip">
+    <div class="container">
+      <span class="eyebrow">Why Propertage&trade;</span>
+      <div class="home-why-grid">
+        <div class="home-why-item"><h3>Complete Transparency</h3><p>Regular reports and updates, every time.</p></div>
+        <div class="home-why-item"><h3>Professional Coordination</h3><p>Property, tenant, vendor and documentation, managed as one.</p></div>
+        <div class="home-why-item"><h3>NRI Focus</h3><p>Designed specifically for owners managing remotely.</p></div>
+        <div class="home-why-item"><h3>Peace of Mind</h3><p>Your property stays protected, maintained and income-ready.</p></div>
       </div>
     </div>
-  </div>
+  </section>
 </section>
 
 <!-- ================= SERVICES ================= -->
-<section class="services" id="services">
-  <div class="container">
-    <div class="services-head">
-      <div>
-        <span class="eyebrow">Signature Services</span>
-        <h2>Everything a property needs, minus your presence.</h2>
-      </div>
-      <p>From tenant onboarding to Khata paperwork, each service is coordinated end to end and reported back with photos, notes and timelines.</p>
+<section id="page-services" class="page-section">
+  <header class="page-header">
+    <div class="container">
+      <span class="eyebrow">Signature Services</span>
+      <h1>Everything a property needs, minus your presence.</h1>
+      <p>From tenant onboarding to Khata paperwork, each service below is coordinated end to end and reported back with photos, notes and timelines &mdash; not handed off and forgotten.</p>
     </div>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M7 13.5L12 9l5 4.5"/><path d="M8.5 12.5V17h7v-4.5"/></svg></div>
-        <h3>Property &amp; Estate Management</h3>
-        <p>Complete administration, supervision, upkeep and owner reporting.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="4"/><line x1="13.5" y1="13.5" x2="17.5" y2="17.5"/></svg></div>
-        <h3>Tenant Search &amp; Onboarding</h3>
-        <p>Tenant sourcing, property visits, screening support, onboarding and handover coordination.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="7" y1="15" x2="13" y2="15"/></svg></div>
-        <h3>Rent Management</h3>
-        <p>Rent tracking, reminders, follow-ups and owner statements.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="5" x2="12" y2="7.5"/><line x1="12" y1="16.5" x2="12" y2="19"/><line x1="5" y1="12" x2="7.5" y2="12"/><line x1="16.5" y1="12" x2="19" y2="12"/></svg></div>
-        <h3>Inspections &amp; Health Reports</h3>
-        <p>Scheduled visits with photo and video updates.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><line x1="7.5" y1="16.5" x2="16.5" y2="7.5"/><circle cx="8" cy="16" r="1.4" fill="currentColor" stroke="none"/><circle cx="16" cy="8" r="1.4" fill="currentColor" stroke="none"/></svg></div>
-        <h3>Repairs &amp; Maintenance</h3>
-        <p>Vendor coordination, estimates, repair supervision and quality checks.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M8 6h6l3 3v9H8z"/><line x1="10" y1="12" x2="15" y2="12"/><line x1="10" y1="15" x2="15" y2="15"/></svg></div>
-        <h3>Documentation Support</h3>
-        <p>Rental agreements, document verification and secure record management.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="6" height="6" fill="currentColor" stroke="none" transform="rotate(45 12 12)"/></svg></div>
-        <h3>Khata Transfer Assistance</h3>
-        <p>Documentation guidance, application support and coordination.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M7 10h8l-2.5-2.5"/><path d="M17 14H9l2.5 2.5"/></svg></div>
-        <h3>e-Khata &amp; Mutation Support</h3>
-        <p>Application assistance and follow-up support.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="1.6" fill="currentColor" stroke="none"/><circle cx="15" cy="15" r="1.6" fill="currentColor" stroke="none"/><line x1="7" y1="17" x2="17" y2="7"/></svg></div>
-        <h3>Property Tax Assistance</h3>
-        <p>Property tax guidance, coordination and documentation support.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5.5"/><ellipse cx="12" cy="12" rx="2.2" ry="5.5"/><line x1="6.5" y1="12" x2="17.5" y2="12"/></svg></div>
-        <h3>NRI Property Management</h3>
-        <p>Complete remote management experience for owners living outside India.</p>
+  </header>
+  <section class="services">
+    <div class="container">
+      <div class="services-list">
+        <div class="service-row"><div class="service-icon-lg"><svg viewBox="0 0 24 24"><path d="M7 13.5L12 9l5 4.5"/><path d="M8.5 12.5V17h7v-4.5"/></svg></div><div><h3>Property &amp; Estate Management</h3><p>Complete administration, supervision, upkeep and owner reporting for your property, whether it's occupied, vacant, or somewhere in between. We coordinate everything on the ground &mdash; vendors, documentation, day-to-day oversight &mdash; and keep you informed with regular updates, so ownership stays hands-off without becoming hands-free of information.</p></div></div>
+        <div class="service-row"><div class="service-icon-lg"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="4"/><line x1="13.5" y1="13.5" x2="17.5" y2="17.5"/></svg></div><div><h3>Tenant Search &amp; Onboarding</h3><p>We handle the entire tenant lifecycle from the first listing to the final handover: sourcing genuine leads, conducting property visits, screening applicants for reliability, and managing the paperwork and move-in process. The goal isn't just filling a vacancy quickly &mdash; it's finding a tenant who'll actually take care of your property.</p></div></div>
+        <div class="service-row"><div class="service-icon-lg"><svg viewBox="0 0 24 24"><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="7" y1="15" x2="13" y2="15"/></svg></div><div><h3>Rent Management</h3><p>Rent tracking, timely reminders, and diligent follow-ups on any delays, backed by a clear monthly statement you can actually read. You'll always know what's been collected, what's pending, and what's been remitted &mdash; no spreadsheets to maintain yourself.</p></div></div>
+        <div class="service-row"><div class="service-icon-lg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="5" x2="12" y2="7.5"/><line x1="12" y1="16.5" x2="12" y2="19"/><line x1="5" y1="12" x2="7.5" y2="12"/><line x1="16.5" y1="12" x2="19" y2="12"/></svg></div><div><h3>Inspections &amp; Health Reports</h3><p>Scheduled visits to your property with photo and video documentation, so you see the actual condition rather than take our word for it. Regular inspections catch small issues &mdash; a slow leak, a loose fitting &mdash; while they're still cheap and easy to fix.</p></div></div>
+        <div class="service-row"><div class="service-icon-lg"><svg viewBox="0 0 24 24"><line x1="7.5" y1="16.5" x2="16.5" y2="7.5"/><circle cx="8" cy="16" r="1.4" fill="currentColor" stroke="none"/><circle cx="16" cy="8" r="1.4" fill="currentColor" stroke="none"/></svg></div><div><h3>Repairs &amp; Maintenance</h3><p>From a leaking tap to a full repainting job, we coordinate vendors, obtain estimates, supervise the work, and check it's actually done to standard before we call it complete. You approve the cost upfront; we manage everything after that.</p></div></div>
+        <div class="service-row"><div class="service-icon-lg"><svg viewBox="0 0 24 24"><path d="M8 6h6l3 3v9H8z"/><line x1="10" y1="12" x2="15" y2="12"/><line x1="10" y1="15" x2="15" y2="15"/></svg></div><div><h3>Documentation Support</h3><p>Rental agreements, identity verification, and secure digital record-keeping for everything related to your property. When you need a document six months from now, it should take one message, not a search through old emails.</p></div></div>
+        <div class="service-row"><div class="service-icon-lg"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="6" height="6" fill="currentColor" stroke="none" transform="rotate(45 12 12)"/></svg></div><div><h3>Khata Transfer Assistance</h3><p>Khata transfer involves real paperwork and real office visits. We handle the documentation checklist, the application, and the coordination with BBMP/GBA offices, so you're not the one standing in line.</p></div></div>
+        <div class="service-row"><div class="service-icon-lg"><svg viewBox="0 0 24 24"><path d="M7 10h8l-2.5-2.5"/><path d="M17 14H9l2.5 2.5"/></svg></div><div><h3>e-Khata &amp; Mutation Support</h3><p>The digital Khata is increasingly the document that actually matters for transactions, loans, and approvals. We manage the application and follow-up on your behalf, including the mutation process where ownership records need updating.</p></div></div>
+        <div class="service-row"><div class="service-icon-lg"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="1.6" fill="currentColor" stroke="none"/><circle cx="15" cy="15" r="1.6" fill="currentColor" stroke="none"/><line x1="7" y1="17" x2="17" y2="7"/></svg></div><div><h3>Property Tax Assistance</h3><p>Annual property tax has a rebate window if paid early, and real penalties if it's missed. We handle the calculation, documentation, and payment coordination so this is one deadline you never have to track yourself.</p></div></div>
+        <div class="service-row"><div class="service-icon-lg"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div><div><h3>BESCOM Name Transfer</h3><p>Electricity connections need to be formally transferred whenever ownership or tenancy changes. We handle the BESCOM application and coordination end to end, so the connection is correctly registered without you having to visit an office.</p></div></div>
+        <div class="service-row"><div class="service-icon-lg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5.5"/><ellipse cx="12" cy="12" rx="2.2" ry="5.5"/><line x1="6.5" y1="12" x2="17.5" y2="12"/></svg></div><div><h3>NRI Property Management</h3><p>A complete remote management experience built specifically for owners living outside India &mdash; video inspection reports, a dedicated point of contact, and communication that works with your time zone, not against it.</p></div></div>
       </div>
     </div>
-  </div>
+  </section>
+  <section class="contact-cta">
+    <div class="container contact-cta-inner">
+      <div><span class="eyebrow">Get in Touch</span><h2>Ready to hand this over to <em>someone reliable?</em></h2>
+        <div class="contact-ctas"><a class="btn btn-primary" href="https://wa.me/919686345696?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener">Message on WhatsApp</a><a class="btn btn-ghost" href="tel:+919686345696">Call +91 96863 45696</a></div>
+      </div>
+      <div class="contact-details"><div><span class="row-label">Phone</span> <a href="tel:+919686345696">+91 96863 45696</a></div><div><span class="row-label">Email</span> <a href="mailto:Contact@Propertage.com">Contact@Propertage.com</a></div></div>
+    </div>
+  </section>
 </section>
 
 <!-- ================= PLANS ================= -->
-<section class="plans" id="plans">
-  <div class="container">
-    <div class="plans-head">
+<section id="page-plans" class="page-section">
+  <header class="page-header">
+    <div class="container">
       <span class="eyebrow">Premium Management Plans</span>
-      <h2>Four levels of care. Choose by how hands-off you'd like to be.</h2>
-      <p>Every plan builds on the one before it — from a watchful eye on a vacant flat, to a dedicated manager running a full portfolio.</p>
+      <h1>Four levels of care. Choose by how hands-off you'd like to be.</h1>
+      <p>Every plan builds on the one before it &mdash; from a watchful eye on a vacant flat, to a dedicated manager running a full portfolio.</p>
     </div>
-
-    <div class="plans-grid">
-
-      <!-- PLAN I -->
-      <div class="plan-card">
-        <span class="plan-numeral">Tier I</span>
-        <h3>Property Care</h3>
-        <div class="plan-price">
-          <span class="amt">₹7,500</span><span class="per"> / month</span>
-          <span class="yr">₹75,000 billed yearly</span>
+  </header>
+  <section class="plans">
+    <div class="container">
+      <div class="plans-grid">
+        <div class="plan-card">
+          <span class="plan-numeral">Tier I</span><h3>Property Care</h3>
+          <div class="plan-price"><span class="amt">&#8377;7,500</span><span class="per"> / month</span><span class="yr">&#8377;75,000 billed yearly</span></div>
+          <div class="plan-for">Ideal for vacant properties and investment properties.</div>
+          <ul class="plan-list">
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Monthly property inspection</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Photo updates</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Utility reminders</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Security &amp; occupancy verification</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Basic maintenance coordination</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Vendor visit coordination</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Monthly owner updates</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Emergency escalation support</li>
+          </ul>
+          <div class="plan-cta"><a class="btn btn-ghost-dark" href="https://wa.me/919686345696?text=Hi%2C%20I%27m%20interested%20in%20the%20Property%20Care%20plan." target="_blank" rel="noopener">Ask about this plan</a></div>
         </div>
-        <div class="plan-for">Ideal for vacant properties and investment properties.</div>
-        <ul class="plan-list">
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Monthly property inspection</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Photo updates</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Utility reminders</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Security &amp; occupancy verification</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Basic maintenance coordination</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Vendor visit coordination</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Monthly owner updates</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Emergency escalation support</li>
-        </ul>
-        <div class="plan-cta"><a class="btn btn-ghost-dark" href="https://wa.me/919686345696?text=Hi%2C%20I%27m%20interested%20in%20the%20Property%20Care%20plan." target="_blank" rel="noopener">Ask about this plan</a></div>
-      </div>
-
-      <!-- PLAN II -->
-      <div class="plan-card">
-        <span class="plan-numeral">Tier II</span>
-        <h3>Rental Management</h3>
-        <div class="plan-price">
-          <span class="amt">₹12,500</span><span class="per"> / month</span>
-          <span class="yr">₹1,25,000 billed yearly</span>
+        <div class="plan-card">
+          <span class="plan-numeral">Tier II</span><h3>Rental Management</h3>
+          <div class="plan-price"><span class="amt">&#8377;12,500</span><span class="per"> / month</span><span class="yr">&#8377;1,25,000 billed yearly</span></div>
+          <div class="plan-for">Ideal for occupied apartments and rental properties.</div>
+          <ul class="plan-list">
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Everything in Property Care</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Tenant coordination</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Rent tracking</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Rent payment reminders</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Lease renewal reminders</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Maintenance complaint handling</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Move-in &amp; move-out support</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Monthly property reports</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Repair coordination</li>
+          </ul>
+          <div class="plan-cta"><a class="btn btn-ghost-dark" href="https://wa.me/919686345696?text=Hi%2C%20I%27m%20interested%20in%20the%20Rental%20Management%20plan." target="_blank" rel="noopener">Ask about this plan</a></div>
         </div>
-        <div class="plan-for">Ideal for occupied apartments and rental properties.</div>
-        <ul class="plan-list">
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Everything in Property Care</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Tenant coordination</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Rent tracking</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Rent payment reminders</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Lease renewal reminders</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Maintenance complaint handling</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Move-in &amp; move-out support</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Monthly property reports</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Repair coordination</li>
-        </ul>
-        <div class="plan-cta"><a class="btn btn-ghost-dark" href="https://wa.me/919686345696?text=Hi%2C%20I%27m%20interested%20in%20the%20Rental%20Management%20plan." target="_blank" rel="noopener">Ask about this plan</a></div>
-      </div>
-
-      <!-- PLAN III - FEATURED -->
-      <div class="plan-card plan-card--featured">
-        <span class="plan-tag">Recommended for NRI Owners</span>
-        <span class="plan-numeral">Tier III</span>
-        <h3>NRI Premium Care</h3>
-        <div class="plan-price">
-          <span class="amt">₹20,000</span><span class="per"> / month</span>
-          <span class="yr">₹2,00,000 billed yearly</span>
+        <div class="plan-card plan-card--featured">
+          <span class="plan-tag">Recommended for NRI Owners</span>
+          <span class="plan-numeral">Tier III</span><h3>NRI Premium Care</h3>
+          <div class="plan-price"><span class="amt">&#8377;20,000</span><span class="per"> / month</span><span class="yr">&#8377;2,00,000 billed yearly</span></div>
+          <div class="plan-for">Ideal for NRI property owners.</div>
+          <ul class="plan-list">
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Everything in Rental Management</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Video inspection reports</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Detailed monthly reporting</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Vendor management</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Repair supervision</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Tenant onboarding support</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Tenant document collection</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Police verification coordination</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Property tax coordination</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>e-Khata coordination support</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Priority support</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Dedicated relationship manager</li>
+          </ul>
+          <div class="plan-cta"><a class="btn btn-primary" href="https://wa.me/919686345696?text=Hi%2C%20I%27m%20interested%20in%20the%20NRI%20Premium%20Care%20plan." target="_blank" rel="noopener">Ask about this plan</a></div>
         </div>
-        <div class="plan-for">Ideal for NRI property owners.</div>
-        <ul class="plan-list">
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Everything in Rental Management</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Video inspection reports</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Detailed monthly reporting</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Vendor management</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Repair supervision</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Tenant onboarding support</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Tenant document collection</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Police verification coordination</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Property tax coordination</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>e-Khata coordination support</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Priority support</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Dedicated relationship manager</li>
-        </ul>
-        <div class="plan-cta"><a class="btn btn-primary" href="https://wa.me/919686345696?text=Hi%2C%20I%27m%20interested%20in%20the%20NRI%20Premium%20Care%20plan." target="_blank" rel="noopener">Ask about this plan</a></div>
-      </div>
-
-      <!-- PLAN IV -->
-      <div class="plan-card">
-        <span class="plan-numeral">Tier IV</span>
-        <h3>Concierge Management</h3>
-        <div class="plan-price">
-          <span class="amt">₹35,000+</span><span class="per"> / month</span>
-          <span class="yr">Custom annual terms available</span>
+        <div class="plan-card">
+          <span class="plan-numeral">Tier IV</span><h3>Concierge Management</h3>
+          <div class="plan-price"><span class="amt">&#8377;35,000+</span><span class="per"> / month</span><span class="yr">Custom annual terms available</span></div>
+          <div class="plan-for">Ideal for villas, multiple properties, HNIs and premium clients.</div>
+          <ul class="plan-list">
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Everything in NRI Premium Care</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Dedicated property manager</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Multiple inspections every month</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Emergency property visits</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Contractor management</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Deep maintenance supervision</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Property readiness checks</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Inventory verification</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Housekeeping coordination</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Quarterly health assessments</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Executive-level reporting</li>
+            <li><svg class="check-icon"><use href="#ic-check"/></svg>Customised support services</li>
+          </ul>
+          <div class="plan-cta"><a class="btn btn-ghost-dark" href="https://wa.me/919686345696?text=Hi%2C%20I%27m%20interested%20in%20the%20Concierge%20Management%20plan." target="_blank" rel="noopener">Ask about this plan</a></div>
         </div>
-        <div class="plan-for">Ideal for villas, multiple properties, HNIs and premium clients.</div>
-        <ul class="plan-list">
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Everything in NRI Premium Care</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Dedicated property manager</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Multiple inspections every month</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Emergency property visits</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Contractor management</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Deep maintenance supervision</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Property readiness checks</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Inventory verification</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Housekeeping coordination</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Quarterly health assessments</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Executive-level reporting</li>
-          <li><svg class="check-icon"><use href="#ic-check"/></svg>Customised support services</li>
-        </ul>
-        <div class="plan-cta"><a class="btn btn-ghost-dark" href="https://wa.me/919686345696?text=Hi%2C%20I%27m%20interested%20in%20the%20Concierge%20Management%20plan." target="_blank" rel="noopener">Ask about this plan</a></div>
       </div>
-
     </div>
-  </div>
+  </section>
+  <section class="ledger">
+    <div class="container">
+      <div class="ledger-head"><span class="eyebrow">One-Time Services</span><h2>For a single job, done properly.</h2></div>
+      <div class="ledger-table">
+        <div class="ledger-row"><div class="ledger-name">Tenant Placement</div><div class="ledger-price">One month's rent</div><div class="ledger-includes">Property listing, lead handling, property visits, shortlisting, tenant recommendation, move-in coordination.</div></div>
+        <div class="ledger-row"><div class="ledger-name">Khata Transfer Assistance</div><div class="ledger-price">&#8377;15,000 &ndash; &#8377;25,000</div><div class="ledger-includes">Documentation checklist, application support, office coordination, status tracking.</div></div>
+        <div class="ledger-row"><div class="ledger-name">e-Khata / Mutation Support</div><div class="ledger-price">&#8377;7,500 &ndash; &#8377;15,000</div><div class="ledger-includes">Documentation guidance, application support, follow-up coordination.</div></div>
+        <div class="ledger-row"><div class="ledger-name">Property Tax Assistance</div><div class="ledger-price">&#8377;3,000 &ndash; &#8377;7,500</div><div class="ledger-includes">Tax guidance, documentation review, compliance support, payment coordination.</div></div>
+        <div class="ledger-row"><div class="ledger-name">Property Inspection</div><div class="ledger-price">&#8377;2,500 &ndash; &#8377;5,000</div><div class="ledger-includes">Physical inspection, photographs, issue identification, inspection report.</div></div>
+        <div class="ledger-row"><div class="ledger-name">Move-In / Move-Out Report</div><div class="ledger-price">&#8377;5,000 &ndash; &#8377;10,000</div><div class="ledger-includes">Property condition assessment, photographic documentation, damage report, handover report.</div></div>
+        <div class="ledger-row"><div class="ledger-name">BESCOM Name Transfer</div><div class="ledger-price">&#8377;5,000 &ndash; &#8377;7,500</div><div class="ledger-includes">Application coordination, documentation support and follow-up with BESCOM until the connection is transferred.</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="contact-cta">
+    <div class="container contact-cta-inner">
+      <div><span class="eyebrow">Get in Touch</span><h2>Not sure which plan <em>fits your property?</em></h2>
+        <div class="contact-ctas"><a class="btn btn-primary" href="https://wa.me/919686345696?text=Hi%2C%20I%27m%20not%20sure%20which%20plan%20fits%20my%20property." target="_blank" rel="noopener">Message on WhatsApp</a><a class="btn btn-ghost" href="tel:+919686345696">Call +91 96863 45696</a></div>
+      </div>
+      <div class="contact-details"><div><span class="row-label">Phone</span> <a href="tel:+919686345696">+91 96863 45696</a></div><div><span class="row-label">Email</span> <a href="mailto:Contact@Propertage.com">Contact@Propertage.com</a></div></div>
+    </div>
+  </section>
 </section>
 
-<!-- ================= ONE-TIME SERVICES (LEDGER) ================= -->
-<section class="ledger">
-  <div class="container">
-    <div class="ledger-head">
-      <span class="eyebrow">One-Time Services</span>
-      <h2>For a single job, done properly.</h2>
+<!-- ================= WHY US ================= -->
+<section id="page-why-us" class="page-section">
+  <header class="page-header">
+    <div class="container">
+      <span class="eyebrow">Why Propertage&trade;</span>
+      <h1>What makes managing a property with us different.</h1>
+      <p>Not vague promises &mdash; four specific things we build every plan around, and the actual process behind them.</p>
     </div>
-    <div class="ledger-table">
-      <div class="ledger-row">
-        <div class="ledger-name">Tenant Placement</div>
-        <div class="ledger-price">One month's rent</div>
-        <div class="ledger-includes">Property listing, lead handling, property visits, shortlisting, tenant recommendation, move-in coordination.</div>
-      </div>
-      <div class="ledger-row">
-        <div class="ledger-name">Khata Transfer Assistance</div>
-        <div class="ledger-price">₹15,000 – ₹25,000</div>
-        <div class="ledger-includes">Documentation checklist, application support, office coordination, status tracking.</div>
-      </div>
-      <div class="ledger-row">
-        <div class="ledger-name">e-Khata / Mutation Support</div>
-        <div class="ledger-price">₹7,500 – ₹15,000</div>
-        <div class="ledger-includes">Documentation guidance, application support, follow-up coordination.</div>
-      </div>
-      <div class="ledger-row">
-        <div class="ledger-name">Property Tax Assistance</div>
-        <div class="ledger-price">₹3,000 – ₹7,500</div>
-        <div class="ledger-includes">Tax guidance, documentation review, compliance support, payment coordination.</div>
-      </div>
-      <div class="ledger-row">
-        <div class="ledger-name">Property Inspection</div>
-        <div class="ledger-price">₹2,500 – ₹5,000</div>
-        <div class="ledger-includes">Physical inspection, photographs, issue identification, inspection report.</div>
-      </div>
-      <div class="ledger-row">
-        <div class="ledger-name">Move-In / Move-Out Report</div>
-        <div class="ledger-price">₹5,000 – ₹10,000</div>
-        <div class="ledger-includes">Property condition assessment, photographic documentation, damage report, handover report.</div>
+  </header>
+  <section class="why-detail">
+    <div class="container">
+      <div class="why-detail-grid">
+        <div class="why-detail-item"><span class="num">01</span><h3>Complete Transparency</h3><p>Every plan includes regular reporting on a schedule you can rely on &mdash; not updates when we remember, but updates you can actually plan around. Whether it's a monthly statement or a photo report after an inspection, you'll never be left wondering what's happening with your property.</p></div>
+        <div class="why-detail-item"><span class="num">02</span><h3>Professional Coordination</h3><p>Property management touches a lot of moving parts &mdash; tenants, vendors, documentation, local authorities. We act as the single point of coordination across all of it, so you're dealing with one accountable team instead of chasing five different people.</p></div>
+        <div class="why-detail-item"><span class="num">03</span><h3>NRI Focus</h3><p>Managing a property from a different country, and often a very different time zone, comes with its own specific friction &mdash; from arranging video walkthroughs to handling paperwork that requires a Power of Attorney. We're built around solving exactly that, not treating remote owners as an afterthought.</p></div>
+        <div class="why-detail-item"><span class="num">04</span><h3>Peace of Mind</h3><p>At the end of the day, the goal is simple: your property stays protected, well-maintained, and income-ready, without it becoming a second job for you to manage from a distance.</p></div>
       </div>
     </div>
-  </div>
+  </section>
+  <section class="steps">
+    <div class="container">
+      <div class="steps-head"><span class="eyebrow">How It Works</span><h2>From first message to ongoing management.</h2></div>
+      <div class="steps-grid">
+        <div class="step-card"><div class="n">01</div><h3>Tell us about your property</h3><p>Where it is, its condition, and how involved you'd like to be.</p></div>
+        <div class="step-card"><div class="n">02</div><h3>We recommend a plan</h3><p>Matched to your situation, not a one-size list.</p></div>
+        <div class="step-card"><div class="n">03</div><h3>Onboarding &amp; documentation</h3><p>An initial inspection and reporting set up from day one.</p></div>
+        <div class="step-card"><div class="n">04</div><h3>Management begins</h3><p>Inspections, coordination and paperwork, on schedule.</p></div>
+        <div class="step-card"><div class="n">05</div><h3>Monthly reporting, always</h3><p>A report you can rely on, wherever you are.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="contact-cta">
+    <div class="container contact-cta-inner">
+      <div><span class="eyebrow">Get in Touch</span><h2>See it in action &mdash; <em>talk to us today.</em></h2>
+        <div class="contact-ctas"><a class="btn btn-primary" href="https://wa.me/919686345696?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Propertage." target="_blank" rel="noopener">Message on WhatsApp</a><a class="btn btn-ghost" href="tel:+919686345696">Call +91 96863 45696</a></div>
+      </div>
+      <div class="contact-details"><div><span class="row-label">Phone</span> <a href="tel:+919686345696">+91 96863 45696</a></div><div><span class="row-label">Email</span> <a href="mailto:Contact@Propertage.com">Contact@Propertage.com</a></div></div>
+    </div>
+  </section>
 </section>
 
-<!-- ================= WHY ================= -->
-<section class="why" id="why">
-  <div class="container">
-    <span class="eyebrow">Why Propertage</span>
-    <div class="why-grid">
-      <div class="why-item">
-        <h3>Complete Transparency</h3>
-        <p>Regular reports and updates, every time.</p>
-      </div>
-      <div class="why-item">
-        <h3>Professional Coordination</h3>
-        <p>Property, tenant, vendor and documentation, managed as one.</p>
-      </div>
-      <div class="why-item">
-        <h3>NRI Focus</h3>
-        <p>Designed specifically for owners managing remotely.</p>
-      </div>
-      <div class="why-item">
-        <h3>Peace of Mind</h3>
-        <p>Your property stays protected, maintained and income-ready.</p>
+<!-- ================= AREAS ================= -->
+<section id="page-areas" class="page-section">
+  <header class="page-header">
+    <div class="container">
+      <span class="eyebrow">Where We Operate</span>
+      <h1>Focused on Bengaluru, block by block.</h1>
+      <p>We'd rather know each neighbourhood properly than claim to cover the whole city thinly. If your property is elsewhere in Bengaluru, reach out &mdash; we're expanding coverage steadily.</p>
+    </div>
+  </header>
+  <section class="areas">
+    <div class="container">
+      <div class="areas-grid">
+        <div class="area-card"><div class="pin"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0114 0c0 3.5-3 7-7 11z"/></svg></div><h3>Koramangala</h3><p>A core service area, with a high concentration of NRI-owned apartments across all blocks.</p></div>
+        <div class="area-card"><div class="pin"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0114 0c0 3.5-3 7-7 11z"/></svg></div><h3>HSR Layout</h3><p>From individual flats to full independent houses, across every sector.</p></div>
+        <div class="area-card"><div class="pin"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0114 0c0 3.5-3 7-7 11z"/></svg></div><h3>Indiranagar</h3><p>Established, high-demand rentals where tenant quality matters most.</p></div>
+        <div class="area-card"><div class="pin"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0114 0c0 3.5-3 7-7 11z"/></svg></div><h3>Whitefield</h3><p>Gated communities and tech-corridor rentals, managed at scale.</p></div>
+        <div class="area-card"><div class="pin"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0114 0c0 3.5-3 7-7 11z"/></svg></div><h3>Electronic City</h3><p>A major IT hub with a steady base of working professionals looking for rentals &mdash; we manage everything from compact apartments to larger family homes across both phases.</p></div>
+        <div class="area-card"><div class="pin"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0114 0c0 3.5-3 7-7 11z"/></svg></div><h3>Marathahalli</h3><p>Well-connected and consistently in demand, with a healthy mix of long-term renters and young professionals &mdash; an area where quick, reliable tenant turnaround matters most.</p></div>
+        <div class="area-card"><div class="pin"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0114 0c0 3.5-3 7-7 11z"/></svg></div><h3>Sarjapur Road</h3><p>A fast-growing corridor, popular with first-time investors and relocating families.</p></div>
+        <div class="area-card"><div class="pin"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0114 0c0 3.5-3 7-7 11z"/></svg></div><h3>And Beyond</h3><p>Own property elsewhere in Bengaluru? Message us &mdash; we're happy to discuss.</p></div>
       </div>
     </div>
-  </div>
+  </section>
+  <section class="contact-cta">
+    <div class="container contact-cta-inner">
+      <div><span class="eyebrow">Get in Touch</span><h2>Check if we cover <em>your locality.</em></h2>
+        <div class="contact-ctas"><a class="btn btn-primary" href="https://wa.me/919686345696?text=Hi%2C%20is%20my%20property%20in%20your%20service%20area%3F" target="_blank" rel="noopener">Message on WhatsApp</a><a class="btn btn-ghost" href="tel:+919686345696">Call +91 96863 45696</a></div>
+      </div>
+      <div class="contact-details"><div><span class="row-label">Phone</span> <a href="tel:+919686345696">+91 96863 45696</a></div><div><span class="row-label">Email</span> <a href="mailto:Contact@Propertage.com">Contact@Propertage.com</a></div></div>
+    </div>
+  </section>
 </section>
 
-<!-- ================= CONTACT / FOOTER ================= -->
-<footer class="contact" id="contact">
-  <div class="container contact-inner">
-    <div>
+<!-- ================= FAQ ================= -->
+<section id="page-faq" class="page-section">
+  <header class="page-header">
+    <div class="container">
+      <span class="eyebrow">Frequently Asked</span>
+      <h1>Questions owners ask before signing up.</h1>
+      <p>Don't see your question here? Message us directly &mdash; we're happy to walk through your specific situation.</p>
+    </div>
+  </header>
+  <section class="faq">
+    <div class="container">
+      <div class="faq-list">
+        <details class="faq-item"><summary>Do I need to be in Bengaluru to sign up?</summary><p>Not at all. Most of our NRI clients sign up entirely remotely &mdash; documents shared digitally, calls scheduled around your time zone.</p></details>
+        <details class="faq-item"><summary>What if I already have a tenant in place?</summary><p>That's fine. We can take over an existing tenancy under Rental Management, picking up rent tracking and coordination from wherever things stand.</p></details>
+        <details class="faq-item"><summary>How quickly can you start?</summary><p>Usually within a few days of signing &mdash; an onboarding inspection is typically the first step, scheduled as soon as you're ready.</p></details>
+        <details class="faq-item"><summary>Can I switch plans later?</summary><p>Yes. As your situation changes &mdash; a property gets tenanted, or you want more hands-off support &mdash; we can move you to a different tier.</p></details>
+        <details class="faq-item"><summary>What happens if there's an emergency repair?</summary><p>We're authorised to act immediately on anything affecting safety or habitability, and you're informed within 24 hours.</p></details>
+        <details class="faq-item"><summary>Do you only work with NRIs?</summary><p>No &mdash; we manage properties for local owners too, including anyone simply too busy to self-manage a rental.</p></details>
+        <details class="faq-item"><summary>Is there a minimum contract length?</summary><p>Our standard term is 12 months, renewing monthly after that &mdash; with a 30-day notice period either way.</p></details>
+        <details class="faq-item"><summary>Can you help if I just want one inspection done?</summary><p>Yes &mdash; our one-time services cover exactly this, no ongoing commitment required.</p></details>
+      </div>
+    </div>
+  </section>
+  <section class="insights">
+    <div class="container">
+      <div class="insights-head"><span class="eyebrow">Insights for Owners</span><h2>A few things worth knowing.</h2></div>
+      <div class="insights-grid">
+        <div class="insight-card"><span class="tag">Owner's Guide</span><h3>Signs Your Rental Property Needs a Manager</h3><p>Rent arriving late, repairs going unreported, and a property you haven't seen inside in months &mdash; these are the quiet signals owners tend to miss until they're expensive.</p></div>
+        <div class="insight-card"><span class="tag">Documentation</span><h3>Khata vs e-Khata, Explained</h3><p>Khata is your property's official BBMP record. e-Khata is the digital version now expected for most transactions &mdash; and increasingly, the one that actually matters.</p></div>
+        <div class="insight-card"><span class="tag">Vacant Properties</span><h3>How to Protect a Property That's Sitting Empty</h3><p>An empty home isn't neutral &mdash; it quietly accumulates risk. Regular inspections, monitored utilities and secured entry points keep it exactly as you left it.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="contact-cta">
+    <div class="container contact-cta-inner">
+      <div><span class="eyebrow">Get in Touch</span><h2>Still have a question? <em>Just ask.</em></h2>
+        <div class="contact-ctas"><a class="btn btn-primary" href="https://wa.me/919686345696?text=Hi%2C%20I%20have%20a%20question." target="_blank" rel="noopener">Message on WhatsApp</a><a class="btn btn-ghost" href="tel:+919686345696">Call +91 96863 45696</a></div>
+      </div>
+      <div class="contact-details"><div><span class="row-label">Phone</span> <a href="tel:+919686345696">+91 96863 45696</a></div><div><span class="row-label">Email</span> <a href="mailto:Contact@Propertage.com">Contact@Propertage.com</a></div></div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="page-contact" class="page-section">
+  <header class="page-header">
+    <div class="container">
       <span class="eyebrow">Get in Touch</span>
-      <h2>Effortless ownership starts with <em>one message.</em></h2>
-      <div class="contact-ctas">
-        <a class="btn btn-primary" href="https://wa.me/919686345696?text=Hi%20PROPERTAGE%2C%20I%27d%20like%20to%20know%20more%20about%20your%20property%20management%20plans." target="_blank" rel="noopener">Message on WhatsApp</a>
-        <a class="btn btn-ghost" href="tel:+919686345696">Call +91 96863 45696</a>
+      <h1>Effortless ownership starts with one message.</h1>
+      <p>Call, WhatsApp, or email &mdash; whichever's easiest from wherever you are. We usually respond within a few hours.</p>
+    </div>
+  </header>
+  <section class="contact-cta" style="padding-top: clamp(3rem,6vw,4.5rem);">
+    <div class="container contact-cta-inner">
+      <div>
+        <span class="eyebrow">Reach Us Directly</span>
+        <h2>We'd genuinely <em>love to help.</em></h2>
+        <div class="contact-ctas">
+          <a class="btn btn-primary" href="https://wa.me/919686345696?text=Hi%20PROPERTAGE%E2%84%A2%2C%20I%27d%20like%20to%20get%20in%20touch." target="_blank" rel="noopener">Message on WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:+919686345696">Call +91 96863 45696</a>
+        </div>
+        <div class="social-row">
+          <a href="#" target="_blank" rel="noopener">Instagram</a>
+          <a href="#" target="_blank" rel="noopener">Facebook</a>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener">X</a>
+        </div>
+      </div>
+      <div class="contact-details">
+        <div><span class="row-label">Address</span> 472/7, Balaji Arcade, 2nd Floor,<br><span style="margin-left:84px; display:inline-block;">20th L Cross Road, Koramangala 4th Block,<br>Bengaluru &ndash; 560095</span></div>
+        <div><span class="row-label">Phone</span> <a href="tel:+919686345696">+91 96863 45696</a></div>
+        <div><span class="row-label">Email</span> <a href="mailto:Contact@Propertage.com">Contact@Propertage.com</a></div>
+        <div><span class="row-label">Web</span> <a href="https://www.propertage.com" target="_blank" rel="noopener">www.Propertage.com</a></div>
+        <div><span class="row-label">GSTIN</span> 29ACOFA6504F1ZB</div>
       </div>
     </div>
-    <div class="contact-details">
-      <div><span class="row-label">Address</span> 472/7, Balaji Arcade, 2nd Floor,<br><span style="margin-left:84px; display:inline-block;">20th L Cross Road, Koramangala 4th Block,<br>Bengaluru – 560095</span></div>
-      <div><span class="row-label">Phone</span> <a href="tel:+919686345696">+91 96863 45696</a></div>
-      <div><span class="row-label">Email</span> <a href="mailto:Contact@Propertage.com">Contact@Propertage.com</a></div>
-      <div><span class="row-label">Web</span> <a href="https://www.propertage.com" target="_blank" rel="noopener">www.Propertage.com</a></div>
-      <div><span class="row-label">GSTIN</span> 29ACOFA6504F1ZB</div>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <span>© 2026 PROPERTAGE — A Brand of ASAR Property Management LLP</span>
+  </section>
+</section>
+
+<!-- ================= PERSISTENT FOOTER ================= -->
+<div class="site-footer">
+  <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.6rem; width:100%;">
+    <span>&copy; 2026 PROPERTAGE&trade; &mdash; A Brand of ASAR Property Management LLP</span>
     <span>Bengaluru, India</span>
   </div>
-</footer>
+</div>
 
 <script>
   (function(){
+    // ---- Clock strip ----
     var zones = document.querySelectorAll('.clock-card');
-    function pad(n){ return n < 10 ? '0'+n : n; }
-    function update(){
+    function updateClocks(){
       var now = new Date();
       zones.forEach(function(card){
         var tz = card.getAttribute('data-tz');
         try{
-          var timeStr = new Intl.DateTimeFormat('en-US', {
-            timeZone: tz, hour: 'numeric', minute: '2-digit', hour12: true
-          }).format(now);
-          var hour24 = parseInt(new Intl.DateTimeFormat('en-US', {
-            timeZone: tz, hour: 'numeric', hour12: false
-          }).format(now), 10);
+          var timeStr = new Intl.DateTimeFormat('en-US', { timeZone: tz, hour: 'numeric', minute: '2-digit', hour12: true }).format(now);
+          var hour24 = parseInt(new Intl.DateTimeFormat('en-US', { timeZone: tz, hour: 'numeric', hour12: false }).format(now), 10);
           card.querySelector('.clock-time').textContent = timeStr;
           var isDay = hour24 >= 6 && hour24 < 19;
           card.classList.toggle('is-night', !isDay);
@@ -1061,8 +698,57 @@
         }catch(e){}
       });
     }
-    update();
-    setInterval(update, 30000);
+    updateClocks();
+    setInterval(updateClocks, 30000);
+
+    // ---- FAQ: one open at a time ----
+    document.querySelectorAll('.faq-item').forEach(function(item){
+      item.addEventListener('toggle', function(){
+        if(item.open){
+          document.querySelectorAll('.faq-item').forEach(function(other){
+            if(other !== item) other.removeAttribute('open');
+          });
+        }
+      });
+    });
+
+    // ---- Section router ----
+    var sections = document.querySelectorAll('.page-section');
+    var navLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
+    var burger = document.getElementById('navBurger');
+    var mobileMenu = document.getElementById('mobileMenu');
+
+    function closeMobileMenu(){
+      burger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+
+    burger.addEventListener('click', function(){
+      burger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    function showPage(name, skipScroll){
+      sections.forEach(function(sec){ sec.classList.toggle('active', sec.id === 'page-' + name); });
+      navLinks.forEach(function(link){ link.classList.toggle('active', link.getAttribute('data-goto') === name); });
+      if(!skipScroll) window.scrollTo({ top: 0, behavior: 'auto' });
+      if(history.replaceState) history.replaceState(null, '', '#' + name);
+      closeMobileMenu();
+    }
+
+    document.querySelectorAll('[data-goto]').forEach(function(el){
+      el.addEventListener('click', function(e){
+        e.preventDefault();
+        showPage(el.getAttribute('data-goto'));
+      });
+    });
+
+    // Load correct page from URL hash on first load (e.g. bookmarked link)
+    var initial = (location.hash || '').replace('#','');
+    var valid = ['home','services','plans','why-us','areas','faq','contact'];
+    if(valid.indexOf(initial) !== -1){
+      showPage(initial, true);
+    }
   })();
 </script>
 
